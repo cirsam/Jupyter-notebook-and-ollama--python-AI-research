@@ -23,9 +23,10 @@ open commandline application or terminal
 10. after you activate your environment. you will see
 
 11.	(.venv)C:\path\to\your\workfolder>
+
 12. now install jupyter notebook.by running pip install jupyter notebook
 
-	13. start the jupyter notebook server by running jupyter notebook
+13. start the jupyter notebook server by running jupyter notebook
 
 14. you can install jupyter lab if you want by running pip install jupyterlab
 
