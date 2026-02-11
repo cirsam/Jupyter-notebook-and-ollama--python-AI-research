@@ -38,10 +38,10 @@ now
 2. go to your searcharea next to the start icon and type ollama. click on the app. it will open the ollama terminal
 
 	3. start the ollama server by runing ollama serve 
+	
 		4. pull which ever model you want by running ollama pull modelName. where modelName is like claude code.
 		
-	5.after the ollama server starts chandge. the model in the ollama.py file to your desired model.you can run the callOllamaserver.ipynb file after. it will connect to the ollama server via API
-
+	5.after the ollama server starts chandge. the model in the ollama.py file to your desired model.you can run the callOllamaserver.ipynb file after. it will connect to the ollama server viaREST API call
 
 
 6. find more models here https://ollama.com/library?sort=newest  and pull which ever one you want .
