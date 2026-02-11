@@ -1,4 +1,5 @@
-**connect jupyter notebook to llama server  to access any AI model via RESTFULLAPI calls**
+**connect jupyter notebook to llama server  to access any AI model via RESTFULL API calls**
+
 __setup steps__
 
 1. go to python.org and download python3 and install it on your machine
