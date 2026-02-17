@@ -9,6 +9,6 @@ def apiCallToOllamaServer(prompt:str,model:str):
         else:
             print("Error:", response.status_code)
             print("status_code", response.status_code)
-            print("message", response.text)
+            print("message\n", response.text)
 
-apiCallToOllamaServer("What is the capital of France?","phi3:mini")
+apiCallToOllamaServer("What is the capital of France?\n","phi3:mini")
