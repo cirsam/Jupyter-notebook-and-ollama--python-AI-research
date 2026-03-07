@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as ptl
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LogisticRegression #when pip installing sklearn use pip install scikit-learn instead of sklearn but import using sklean
 from sklearn.metrics import accuracy_score
 from sklearn.datasets import load_iris
 
@@ -19,10 +19,10 @@ num_py_random_data_to_Pd_df = pd.DataFrame(num_py_random_data,columns={'0':"col0
 num_py_random_data_to_Pd_df.columns=['cols0','cols1','cols2','cols3','cols4']
 print(f"{num_py_random_data_to_Pd_df}")
 
-df = pd.DataFrame(data.data, columns=data.feature_names)
-df['target'] = data.target
+iris_df = pd.DataFrame(data.data, columns=data.feature_names)
+iris_df['target'] = data.target
 # View the first few rows
-df.head()
+iris_df.head()
 print(f"got here2")
 
 # print a one-dimensional array of integers and strings in pandas called a series. In numpy, they are called a vector
@@ -82,8 +82,8 @@ data2 = {
 df2 = pd.DataFrame(data1)
 df3 = pd.DataFrame(data2)
 print(f"got here3")
-X = df.drop('target', axis=1) # Features
-y = df['target']              # Labels (what we want to predict)
+X = iris_df.drop('target', axis=1) # Features
+y = iris_df['target']              # Labels (what we want to predict)
 print(f"got here4")
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 model = LogisticRegression(max_iter=200)

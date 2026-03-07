@@ -10,12 +10,12 @@ class simpletokenizer:
             
             
               
-            my_list = re.split(r'\s+', self.text)
-            for index, value in enumerate(my_list):
+            words_list = re.split(r'\s+', self.text)
+            for index, value in enumerate(words_list):
                 print(f"Index: {index}, Value: {value}")
                 self.ids.append(index)
                 self.words. append(value)
-                #print(sorted(set(words)))
+                print(sorted(set(self.words)))
                 
             print("\nthe words\n",set(self.words))    
             return self.ids
@@ -23,7 +23,7 @@ class simpletokenizer:
         
     
         def decode(self):
-            my_list = re.split(r'\s+', self.text)
+            words_list = re.split(r'\s+', self.text)
             mywords=self.words
             for i, id in enumerate(self.ids):
              print(f"mylist[{id}]",self.words[id])

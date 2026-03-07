@@ -1,0 +1,8 @@
+base_model: meta-llama/Meta-Llama-3-8B
+datasets:
+  - path: /Users/cirsa/source/repos/Python data.jsonl
+    type: alpaca
+trainer: lora
+lora_r: 32
+lora_alpha: 16
+# ... other parameters

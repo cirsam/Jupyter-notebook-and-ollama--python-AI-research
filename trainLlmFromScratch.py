@@ -18,7 +18,7 @@ from transformers import GPT2Tokenizer, GPT2LMHeadModel, Trainer, TrainingArgume
 the_tokenizer= GPT2Tokenizer.from_pretrained('gpt2')
 # Set padding token to eos token for left-padding (needed for generation/prediction)
 the_tokenizer.pad_token = the_tokenizer.eos_token
-model = GPT2LMHeadModel.from_pretrained('gpt2')
+GPT2_model = GPT2LMHeadModel.from_pretrained('gpt2')
 
 
 # read the pure dataset from a file and tokenize it
@@ -44,17 +44,17 @@ print("this is the squencelenght of the tensor",token_ids_to_tensor.size(1))
 
 # You can now pass a tensor directly to the pretrained model. Make sure you use the same
 #model for the tikenizer, and the model in this case is gpt2
-output_tensor=model(token_ids_to_tensor)
+output_tensor=GPT2_model(token_ids_to_tensor)
 print("\n\n Output tensor of the input tensor token_ids_to_tensor\n\n",output_tensor)
 # re-evaluate your model
-model.eval()
-joblib.dump(model,"my_trained_model.pkl")
+GPT2_model.eval()
+joblib.dump(GPT2_model,"my_trained_model.pkl")
 # Load the model from the .pkl file
-my_loaded_model = joblib.load('my_trained_model.pkl',"utf-8")
+my_trained_loaded_model = joblib.load('my_trained_model.pkl',"utf-8")
 
 input_text = "use pretrained data Hailing from the Treme neighborhood"
 inputs = the_tokenizer(input_text, return_tensors="pt")
-outputs = my_loaded_model.generate(**inputs, max_length=50)
+outputs = my_trained_loaded_model.generate(**inputs, max_length=50)
 print(the_tokenizer.decode(outputs[0], skip_special_tokens=True))
 
 
